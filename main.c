@@ -132,7 +132,12 @@ if ((status = getaddrinfo(NULL, "3490", &hints, &servinfo)) != 0){
 	exit(1);
 }
 
-int socket(int domain,		// PF_INET or PF_INET6
+// ************************************
+// **********socket()******************
+// ************************************
+// It returns the file descriptor 
+int socket(int domain,		// PF_INET or PF_INET6. You should use AF_INET* on you struct and PF_INET* on the call
+							// but they are essentially the same
 			int type,		// SOCK_STREAM or SOCK_DGRAM
 			int protocol);	// 0 if you want to choose the proper protocol (tcp, udp)
 
@@ -141,5 +146,33 @@ int s;
 struct addrinfo hints, *res;
 
 getaddrinfo("example.com", "http", &hints, &res);
+// Now we have the linked lis on res
 
-s = socket(res->ai_family, ai->ai_socktype, ai->ai_protocol)
+s = socket(res->ai_family, ai->ai_socktype, ai->ai_protocol) // returns the socket descriptor as an int
+// it can return -1 in case of error
+
+// ************************************
+// ***********bind()*******************
+// ************************************
+//
+
+int bind(int sockfd,				// File descriptor (what returns socket())
+		struct sockaddr *my_addr,	// Contains information about your adress, namely, port and IP
+		int addrlen);				// Lenght in bytes of the address
+
+// Example of bind()
+struct addrinfo hints, *res;
+int sockfd;
+
+memset(&hints, 0, sizeof hints); // to ensure that the struct is empty
+hints.ai_family = AF_UNSPEC;		// any type
+hints.ai_socktype = SOCK_STREAM;	// TCP stream sockets
+hints.ai_flags = AI_PASSIVE;		
+
+getaddrinfo(NULL, "example.com", &hints, &res);
+
+// Create the socket
+sockfd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+
+// Use the socket and res
+bind(sockfd, res->ai_addr, res->ai_addrlen); // It can return -1 in case of error
