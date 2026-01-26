@@ -154,7 +154,7 @@ s = socket(res->ai_family, ai->ai_socktype, ai->ai_protocol) // returns the sock
 // ************************************
 // ***********bind()*******************
 // ************************************
-//
+// lets you assign a socket to a port
 
 int bind(int sockfd,				// File descriptor (what returns socket())
 		struct sockaddr *my_addr,	// Contains information about your adress, namely, port and IP
@@ -176,3 +176,36 @@ sockfd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
 
 // Use the socket and res
 bind(sockfd, res->ai_addr, res->ai_addrlen); // It can return -1 in case of error
+
+// ************************************
+// *************connect()**************
+// ************************************
+// Let's you connect to an specific address and socket
+
+int connect(int sockfd,						// file descriptor
+			struct sockaddr *serv_addr,		// adresss of the server
+			int addrlen);					// length in bytes of the address
+
+struct addrinfo hints, *res;
+int sockfd;
+
+memset(&hints, 0, sizeof hints);
+hint.ai_family = AF_UNSPEC;
+hints.ai_socktype = SOCK_STREAM;
+
+getaddrinfo("example.com", "3490", &hints, &res);
+
+sockfd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+
+// Connect to the server
+connect(sockfd, res->ai_addr, res->ai_addrlen); // It can return -1 in case of error
+
+// ************************************
+// *********** listen() ****************
+// ************************************
+// Let's you listen incoming connections
+
+int liste(int sockfd,		// Socket file descriptor
+			int backlog);	// Size of the queue which keeps incoming connections until
+							// they are accept()
+
