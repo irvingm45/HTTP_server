@@ -107,9 +107,11 @@ sa6.sin6_addr = in6addr_any; // IPv6 equivalent
 
 // SYSTEM CALLS or BUST -------
 // ----------------------------
-
-// getaddrinfo() **************
+// ************************************
+// ********getaddrinfo() **************
+// ************************************
 // returns a pointer to a linked-list
+
 int getaddrinfo(const char *node, 				// e.g. "www.example.com" or IP
 				const char *service,			// e.g. "http" or port number
 				const struct addrinfo *hints,
