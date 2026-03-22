@@ -1,0 +1,102 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/blue_bomber45/.bun/bin/"
+      - "/home/blue_bomber45/.cargo/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/home/blue_bomber45/.local/bin/"
+      - "/usr/games/"
+      - "/bin/"
+    searched_directories:
+      - "/home/blue_bomber45/.bun/bin/uname"
+      - "/home/blue_bomber45/.cargo/bin/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+      - "/usr/sbin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/blue_bomber45/.bun/bin"
+        - "/home/blue_bomber45/.bun/bin"
+        - "/home/blue_bomber45/.cargo/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/home/blue_bomber45/.local/bin"
+        - "/usr/games"
+        - "/home/blue_bomber45/.local/bin"
+        - "/usr/games"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/blue_bomber45/vcpkg/scripts/buildsystems/vcpkg.cmake:309 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:146 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "Z_VCPKG_CL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cl"
+    candidate_directories:
+      - "/home/blue_bomber45/.bun/bin/"
+      - "/home/blue_bomber45/.cargo/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/home/blue_bomber45/.local/bin/"
+      - "/usr/games/"
+    searched_directories:
+      - "/home/blue_bomber45/.bun/bin/cl"
+      - "/home/blue_bomber45/.cargo/bin/cl"
+      - "/usr/local/sbin/cl"
+      - "/usr/local/bin/cl"
+      - "/usr/sbin/cl"
+      - "/usr/bin/cl"
+      - "/home/blue_bomber45/.local/bin/cl"
+      - "/usr/games/cl"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/blue_bomber45/.bun/bin"
+        - "/home/blue_bomber45/.bun/bin"
+        - "/home/blue_bomber45/.cargo/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/home/blue_bomber45/.local/bin"
+        - "/usr/games"
+        - "/home/blue_bomber45/.local/bin"
+        - "/usr/games"
