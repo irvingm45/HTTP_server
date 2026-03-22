@@ -1,0 +1,49 @@
+# --- Compilación y Binarios ---
+build/
+bin/
+out/
+*.o
+*.obj
+*.exe
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# --- vcpkg (Dependencias) ---
+vcpkg_installed/
+vcpkg-manifest-install.log
+
+# --- CMake ---
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+Makefile
+CMakeUserPresets.json
+
+# --- Archivos Temporales y Logs ---
+tmp/
+*.log
+*.tmp
+*.swp
+*~
+
+# --- IDEs y Editores ---
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+.vs/
+[Bb]in/
+[Oo]bj/
+
+# CLion / JetBrains
+.idea/
+cmake-build-*/
+
+# --- Sistema Operativo ---
+.DS_Store
+Thumbs.db
