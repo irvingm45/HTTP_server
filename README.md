@@ -8,4 +8,5 @@ etc.
 I'm following *Beej's guide* to studdy most of the concepts, so you can learn what I'm doing with [this link](https://beej.us/guide/bgnet/html/#audience)
 
 I also have my own notes in [notion](https://www.notion.so/Beej-s-guide-2da899892817805b9b43e62f3e029517?source=copy_link)
-To see the code of the project and more details change to the "Project_finished" branch
+
+If you want to see the code of the project and more details, change to the "Project_finished" branch
